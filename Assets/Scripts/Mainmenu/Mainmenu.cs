@@ -7,7 +7,7 @@ public class Mainmenu : MonoBehaviour
 {
     public GameObject loadingscreen;
     public Slider loadingbar;
-   
+    
     public void QuitGame()
     {
         Debug.Log("You have quit the game\n");
