@@ -14599,7 +14599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransitionDuration: 0.125
-  m_InteractableSource: {fileID: 1029653312}
+  m_InteractableSource: {fileID: 6396361244832933702}
   m_IgnoreHoverEvents: 0
   m_IgnoreHoverPriorityEvents: 1
   m_IgnoreFocusEvents: 1
@@ -18638,7 +18638,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3133988266871999770}
-  - component: {fileID: 7514099971926010329}
   - component: {fileID: 6396361244832933702}
   - component: {fileID: 5605022}
   - component: {fileID: 7514099971926010330}
@@ -19030,19 +19029,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7514099971926010329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2494087748983757660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20fee061545619c4ca04a8ca17167ae7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Object: {fileID: 953837041}
 --- !u!135 &7514099971926010330
 SphereCollider:
   m_ObjectHideFlags: 0
