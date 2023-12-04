@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bucket_3D
+* source:	https://sketchfab.com/3d-models/bucket-3d-7548d27e928b4544838684a29204d561
+* author:	interventions of necessity (https://sketchfab.com/interventions-of-necessity)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bucket_3D" (https://sketchfab.com/3d-models/bucket-3d-7548d27e928b4544838684a29204d561) by interventions of necessity (https://sketchfab.com/interventions-of-necessity) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
