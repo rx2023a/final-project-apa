@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6623372431843374160}
   - component: {fileID: 5891731551285460380}
   - component: {fileID: 6783316136659816630}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 5032331264333041651}
   - component: {fileID: 367617972834544554}
   - component: {fileID: 3333108294212135873}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fire-Calm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4913,7 +4913,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 5936
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -5027,7 +5027,7 @@ GameObject:
   - component: {fileID: 7772642261515218145}
   - component: {fileID: 379415819719742292}
   - component: {fileID: 4856997295247150}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9728,7 +9728,7 @@ GameObject:
   - component: {fileID: 3712932205935924874}
   - component: {fileID: 9214119221081551664}
   - component: {fileID: 8523606460563192303}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flames
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IExtinguishable
 {
+    bool getState();
     void Ignite();
     void Extinguish();
     void ChangeIntensity();

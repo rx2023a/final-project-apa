@@ -11,6 +11,7 @@ public class Fire : MonoBehaviour,IExtinguishable
     [SerializeField]private ParticleSystem [] ps = new ParticleSystem[0];
     [SerializeField] private float decreaseAmount = 0.1f;
     private float[] startIntensity = new float[0];
+    public bool extinguished = false;
     private void Awake()
     {
         Debug.Log("Fire awake");
@@ -21,6 +22,11 @@ public class Fire : MonoBehaviour,IExtinguishable
         }
     }
     
+    public bool getState()
+    {
+        return extinguished;
+    }
+
     public void Explode()
     {
         throw new System.NotImplementedException();
@@ -53,7 +59,9 @@ public class Fire : MonoBehaviour,IExtinguishable
         if (currentIntensity<=0f)
         {
             Debug.Log("extingusihed");
-            Destroy(this.gameObject);
+            extinguished = true;
+            this.gameObject.SetActive(false);
+            //Destroy(this.gameObject);
         }
     }
 
@@ -61,5 +69,6 @@ public class Fire : MonoBehaviour,IExtinguishable
     {
         throw new System.NotImplementedException();
     }
+    
 
 }
