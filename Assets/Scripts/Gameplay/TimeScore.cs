@@ -6,20 +6,16 @@ using TMPro;
 using UnityEngine.UI;
 public class TimeScore : MonoBehaviour
 {
-    private bool timerActive;
+    [SerializeField] private bool timerActive;
     [SerializeField] private int startSeconds;
-    public string score;
     public int fastesttime;
-    float currentTime;
+    public float currentTime;
     public TextMeshProUGUI crTimeText;
-    public TextMeshProUGUI bsTimeText;
     public string timeString { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
         currentTime = startSeconds;
-        TimeSpan bestTime = TimeSpan.FromSeconds(0);
-        bsTimeText.text = $"Total: {bestTime.Minutes:00}:{bestTime.Seconds:00}";
     }
 
     // Update is called once per frame
@@ -29,11 +25,7 @@ public class TimeScore : MonoBehaviour
         {
             currentTime = currentTime - Time.deltaTime;
             
-            if (currentTime<=0)
-            {
-                //do something here
-                StopTimer();
-            }
+            
         }
         //fastest time
         fastesttime =  startSeconds - Mathf.RoundToInt(currentTime);

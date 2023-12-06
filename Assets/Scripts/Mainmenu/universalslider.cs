@@ -17,6 +17,12 @@ public class universalslider : MonoBehaviour
         myslider.value = globalvol;
     }
 
+    public void SetVolumeKnob(float sliderval)
+    {
+        SetVolume(sliderval / 360);
+    }
+
+
     public void SetVolume(float sliderval)
     {
         myslider.value = globalvol;

@@ -103,7 +103,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -412,7 +412,6 @@ GameObject:
   - component: {fileID: 5730525922583167337}
   - component: {fileID: 6386565912562306538}
   - component: {fileID: 8198912498636355684}
-  - component: {fileID: 974869895914715676}
   m_Layer: 0
   m_Name: Muzzle
   m_TagString: Untagged
@@ -512,28 +511,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &974869895914715676
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4155067873699016878}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3334790249435596845, guid: aa3ef99db3e6d954babd619545df6911, type: 3}
 --- !u!1 &5264876656229321288
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +579,6 @@ GameObject:
   - component: {fileID: 5825414777544574382}
   - component: {fileID: 5973389759012034883}
   - component: {fileID: 3021704587353953354}
-  - component: {fileID: 2071916981931053795}
   m_Layer: 0
   m_Name: FE_01_low
   m_TagString: Untagged
@@ -703,28 +679,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &2071916981931053795
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5822181607713976234}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7801231152876675056, guid: aa3ef99db3e6d954babd619545df6911, type: 3}
 --- !u!1 &6582720260259849529
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +803,7 @@ HingeJoint:
   m_Anchor: {x: -0.03, y: -0.01, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.011910722, y: 0.15703559, z: -0.000000026077032}
+  m_ConnectedAnchor: {x: -0.011910722, y: 0.15703559, z: 0.00000009313226}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
