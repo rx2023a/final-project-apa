@@ -6,11 +6,11 @@ using TMPro;
 using UnityEngine.UI;
 public class TimeScore : MonoBehaviour
 {
-    [SerializeField] private bool timerActive;
+    [SerializeField] public bool timerActive;
     [SerializeField] private int startSeconds;
     public int fastesttime;
     public float currentTime;
-    public TextMeshProUGUI crTimeText;
+    [SerializeField]private TextMeshProUGUI crTimeText;
     public string timeString { get; private set; }
     // Start is called before the first frame update
     void Start()

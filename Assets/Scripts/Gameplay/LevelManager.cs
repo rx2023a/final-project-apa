@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     private IExtinguishable[] extinguishables= new IExtinguishable[0];
     private TimeScore timeScore;
+    [SerializeField] private GameObject endButton;
     void Start()
     {
         //Debug.Log(CalculateScore());
@@ -19,7 +20,7 @@ public class LevelManager : MonoBehaviour
     {
         if (timeScore.currentTime <= 0)
         {
-            timeScore.StopTimer();
+            EndLevel();
         }
     }
     // Update is called once per frame
@@ -27,7 +28,7 @@ public class LevelManager : MonoBehaviour
     {
         //start timer
         timeScore.StartTimer();
-
+        
     }
     //If player gets out
     public void EndLevel()
@@ -35,32 +36,45 @@ public class LevelManager : MonoBehaviour
         //end timer
         //calculate and save score
         //tp back to menu
-        timeScore.StopTimer();
-        SaveScore();
-        LoadLevel(0);
+        if (timeScore.timerActive)
+        {
+            Debug.Log("Score: "+CalculateScore());
+            endButton.SetActive(false);
+            timeScore.StopTimer();
+            SaveScore();
+            LoadLevel(0);
+            return;
+        }
+
+       
     }
 
-    private const string ScoreKey = "PlayerScore";
+    private const string ScoreKey = "HighScore";
 
     // Save the player score
     public void SaveScore()
     {
-        PlayerPrefs.SetInt(ScoreKey, CalculateScore());
+        PlayerPrefs.SetFloat(ScoreKey, CalculateScore());
         PlayerPrefs.Save();
     }
 
-    int CalculateScore()
+    float CalculateScore()
     {
         var extinguishables = FindObjectsOfType<MonoBehaviour>(true).OfType<IExtinguishable>();
 
-       /* foreach (IExtinguishable e in extinguishables)
+        foreach (IExtinguishable e in extinguishables)
         {
-            Debug.Log(e);
-        }*/
+            Debug.Log(e.getState());
+        }
         int time = timeScore.fastesttime;
-        int total = extinguishables.Count();
-        int extinguished = extinguishables.Count(extinguishable => extinguishable.getState());
-        return (extinguished/total)*(1/time);
+        if (time==0)
+        {
+            time = 1;
+        }
+        float extinguished = extinguishables.Count(extinguishable => extinguishable.getState());
+        float total = extinguishables.Count();
+        Debug.Log($"{extinguished/total} {1.0f / (float)time}");
+        return (extinguished / total * (1.0f/(float)time))*1000;
     }
 
     public void LoadLevel(int id)
