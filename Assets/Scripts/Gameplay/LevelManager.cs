@@ -54,6 +54,10 @@ public class LevelManager : MonoBehaviour
     // Save the player score
     public void SaveScore()
     {
+        if (PlayerPrefs.GetFloat(ScoreKey)> CalculateScore())
+        {
+            return;
+        }
         PlayerPrefs.SetFloat(ScoreKey, CalculateScore());
         PlayerPrefs.Save();
     }
