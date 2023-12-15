@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+using System;
 
+
+[Serializable]
+public class MyEvent : UnityEvent<string, GameObject> { }
 [RequireComponent(typeof(TimeScore))]
 public class LevelManager : MonoBehaviour
 {
+
     // Start is called before the first frame update
     private IExtinguishable[] extinguishables= new IExtinguishable[0];
     private TimeScore timeScore;
     [SerializeField] private GameObject endButton;
+    [SerializeField] private Collider startTrigger;
+    public MyEvent OnEvent;
     void Start()
     {
         //Debug.Log(CalculateScore());
@@ -18,10 +26,12 @@ public class LevelManager : MonoBehaviour
     }
     private void Update()
     {
+
         if (timeScore.currentTime <= 0)
         {
             EndLevel();
         }
+        
     }
     // Update is called once per frame
     public void StartLevel()
@@ -30,6 +40,7 @@ public class LevelManager : MonoBehaviour
         timeScore.StartTimer();
         
     }
+    
     //If player gets out
     public void EndLevel()
     {
