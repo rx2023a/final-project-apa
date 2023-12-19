@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GlassSystem.Scripts;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -395,6 +396,14 @@ namespace BNG {
                 RaycastHit hit;
                 if (Physics.Raycast(MuzzlePointTransform.position, MuzzlePointTransform.forward, out hit, MaxRange, ValidLayers, QueryTriggerInteraction.Ignore)) {
                     OnRaycastHit(hit);
+
+                    // Check for Glass component on the hit object
+                    Glass glass = hit.collider.GetComponent<Glass>();
+                    if (glass != null) {
+                        Debug.Log("Glass component found, attempting to break glass.");
+                        // Call the Break method (modify parameters as needed)
+                        glass.Break(hit.point, -hit.normal);  // Assuming -hit.normal as the force direction
+                    }
                 }
             }
 
@@ -462,12 +471,17 @@ namespace BNG {
         public virtual void OnRaycastHit(RaycastHit hit) {
 
             ApplyParticleFX(hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal), hit.collider);
-
+            Glass glass = hit.collider.GetComponent<Glass>();
+            if (glass != null) {
+                Debug.Log("Raycast hit glass object.");
+                // Handle glass-specific logic here if needed
+            }
             // push object if rigidbody
             Rigidbody hitRigid = hit.collider.attachedRigidbody;
             if (hitRigid != null) {
                 hitRigid.AddForceAtPosition(BulletImpactForce * MuzzlePointTransform.forward, hit.point);
             }
+            
 
             // Damage if possible
             Damageable d = hit.collider.GetComponent<Damageable>();

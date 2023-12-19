@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GlassSystem.Scripts;
 using UnityEngine;
 
 namespace BNG {
@@ -62,21 +63,48 @@ namespace BNG {
         }
 
         public virtual void OnCollisionEvent(Collision collision) {
-            LastDamageForce = collision.impulse.magnitude;
-            LastRelativeVelocity = collision.relativeVelocity.magnitude;
+            float impactForceMagnitude = collision.relativeVelocity.magnitude;
 
-            if (LastDamageForce >= MinForce) {
+            if (impactForceMagnitude >= MinForce)
+            {
+                // Check for Glass component on the collided object
+                
+                var glass = collision.gameObject.GetComponent<Glass>();
+                Debug.Log(glass);
+                if (glass != null)
+                {
+                    // Calculate the impact point and normal
+                    Vector3 impactPoint = collision.GetContact(0).point;
+                    Vector3 impactNormal = collision.GetContact(0).normal;
 
-                // Can we damage what we hit?
-                Damageable d = collision.gameObject.GetComponent<Damageable>();
-                if (d) {
-                    d.DealDamage(Damage, collision.GetContact(0).point, collision.GetContact(0).normal, true, gameObject, collision.gameObject);
+                    // Break the glass without using rigid body force
+                    glass.Break(impactPoint, impactNormal);
                 }
-                // Otherwise, can we take damage ourselves from this collision?
-                else if (TakeCollisionDamage && thisDamageable != null) {
-                    thisDamageable.DealDamage(CollisionDamage, collision.GetContact(0).point, collision.GetContact(0).normal, true, gameObject, collision.gameObject);
+                else
+                {
+                    // Handle other objects that are not glass
+                    Damageable damageable = collision.gameObject.GetComponent<Damageable>();
+                    if (damageable != null)
+                    {
+                        damageable.DealDamage(Damage, collision.GetContact(0).point, collision.GetContact(0).normal, true, gameObject, collision.gameObject);
+                    }
                 }
             }
+            // LastDamageForce = collision.impulse.magnitude;
+            // LastRelativeVelocity = collision.relativeVelocity.magnitude;
+            //
+            // if (LastDamageForce >= MinForce) {
+            //
+            //     // Can we damage what we hit?
+            //     Damageable d = collision.gameObject.GetComponent<Damageable>();
+            //     if (d) {
+            //         d.DealDamage(Damage, collision.GetContact(0).point, collision.GetContact(0).normal, true, gameObject, collision.gameObject);
+            //     }
+            //     // Otherwise, can we take damage ourselves from this collision?
+            //     else if (TakeCollisionDamage && thisDamageable != null) {
+            //         thisDamageable.DealDamage(CollisionDamage, collision.GetContact(0).point, collision.GetContact(0).normal, true, gameObject, collision.gameObject);
+            //     }
+            // }
         }
     }
 }

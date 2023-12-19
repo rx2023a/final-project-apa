@@ -6,34 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/BNG Framework/Scenes/XR Demo.unity
-    guid: a1360534006d3f845bc79b46b93cfec5
-  - enabled: 0
-    path: Assets/BNG Framework/Scenes/Scene Transitioning.unity
-    guid: 9d7c9629abf9c99449e358b0938b47d0
-  - enabled: 0
-    path: Assets/BNG Framework/Scenes/Physics Hands.unity
-    guid: 34a4579517c578e4080d0a6ef2c96294
-  - enabled: 0
-    path: Assets/BNG Framework/Scenes/Rigidbody Player.unity
-    guid: 57fc97c5771a777449aa8bd02514df22
-  - enabled: 0
-    path: Assets/BNG Framework/Scenes/Vehicle Example.unity
-    guid: d96233ee44d985d4fb8dc23a907c06eb
-  - enabled: 0
-    path: Assets/BNG Framework/Scenes/Quest Demo.unity
-    guid: eac0312c32df12949a47d07747a9d1cd
+    path: Assets/Scenes/gameplay/Menu.unity
+    guid: 8dffff1a424c9514dbf242537bc01f16
+  - enabled: 1
+    path: Assets/Scenes/gameplay/DemoLevel.unity
+    guid: dd656807f2a1da34287c3071dc3880e6
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: eaab7048539ca8a45b09de9942164773,
       type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 2ec24d39f7b5ac84aad7e5df7b4fd3ea,
       type: 2}
     WebXR.Settings: {fileID: 11400000, guid: fe9659bb224bb054bb1dbca065d1d318, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 7c0d65f8139523c47a3ac0b1587ccdf6,
       type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bc87842975b39e54c9a8257bb65aef55,
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 986ca8911f6ead04480f1e47e7c539b9,
       type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: eac05cd04e1481042af6571213847bc4,
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: ba8e00e6955ac85418f6cad6aa815408,
       type: 2}
-    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 3214f3282c4cdab4dbe264531a85ad34,
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 2ae0a4a226e8d9e4aba56d1e2eb3977b,
       type: 2}
