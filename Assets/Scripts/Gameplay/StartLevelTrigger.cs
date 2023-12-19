@@ -9,7 +9,11 @@ public class StartLevelTrigger : MonoBehaviour
     [SerializeField] private GameObject endTrigger;
     private void OnTriggerEnter(Collider other)
     {
-        levelManager.StartLevel();
-        endTrigger.SetActive(true);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            levelManager.StartLevel();
+            endTrigger.SetActive(true);
+        }
+
     }
 }

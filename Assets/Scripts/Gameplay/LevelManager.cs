@@ -16,9 +16,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     private IExtinguishable[] extinguishables= new IExtinguishable[0];
     private TimeScore timeScore;
-    [SerializeField] private GameObject endButton;
-    [SerializeField] private Collider startTrigger;
-    public MyEvent OnEvent;
+    //[SerializeField] private GameObject endButton;
     void Start()
     {
         //Debug.Log(CalculateScore());
@@ -50,7 +48,7 @@ public class LevelManager : MonoBehaviour
         if (timeScore.timerActive)
         {
             Debug.Log("Score: "+CalculateScore());
-            endButton.SetActive(false);
+            //endButton.SetActive(false);
             timeScore.StopTimer();
             SaveScore();
             LoadLevel(0);

@@ -8,6 +8,10 @@ public class EndLevelTrigger : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        levelManager.EndLevel();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            levelManager.EndLevel();
+        }
+
     }
 }
